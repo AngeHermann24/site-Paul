@@ -97,9 +97,10 @@ export const PAGE_HERO_IMAGES = {
   contact: { src: LOCAL_IMAGES.portrait.src, position: 'center 15%' },
 } as const;
 
+/** Médias du hero : variables `VITE_HERO_*` si définies, sinon fichiers versionnés de `public/media/`. */
 export const HERO_MEDIA = {
   videoMp4: read(import.meta.env.VITE_HERO_VIDEO_MP4),
   videoWebm: read(import.meta.env.VITE_HERO_VIDEO_WEBM),
-  videoMobileMp4: read(import.meta.env.VITE_HERO_VIDEO_MOBILE_MP4),
-  poster: read(import.meta.env.VITE_HERO_POSTER),
+  videoMobileMp4: read(import.meta.env.VITE_HERO_VIDEO_MOBILE_MP4) || '/media/hero-mobile.mp4',
+  poster: read(import.meta.env.VITE_HERO_POSTER) || LOCAL_IMAGES.victoire.src,
 } as const;

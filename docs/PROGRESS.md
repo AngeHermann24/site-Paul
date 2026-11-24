@@ -17,7 +17,8 @@
 | 7 — Qualité | ⏳ à faire | |
 
 ## Git
-- Aucune identité Git configurée sur la machine. **Décision utilisateur : l'agent ne committe pas**, l'utilisateur committe lui-même à la fin de chaque phase. Le dépôt est initialisé (`main`, aucun commit).
+- Aucune identité Git configurée sur la machine. **Décision utilisateur : l'agent ne committe pas**, l'utilisateur committe lui-même à la fin de chaque phase (sauf demande explicite).
+- Dépôt distant : `origin` = https://github.com/AngeHermann24/site-Paul.git, branche `main` (1er commit `8f8ede4`). Auteur utilisé à la demande de l'utilisateur : `AngeHermann24 <215768154+AngeHermann24@users.noreply.github.com>` (passé via `git -c`, config non modifiée).
 
 ## Audit initial (Phase 1)
 
