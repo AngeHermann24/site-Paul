@@ -1,0 +1,57 @@
+.rich {
+  display: grid;
+  gap: 1.1em;
+  max-width: 68ch;
+  font-size: var(--fs-md);
+  line-height: 1.7;
+  color: var(--grey-300);
+}
+
+.rich h3,
+.rich h4 {
+  margin-top: 0.6em;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--white);
+}
+
+.rich h3 {
+  font-size: var(--fs-xl);
+}
+
+.rich h4 {
+  font-size: var(--fs-lg);
+}
+
+.rich strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.rich a {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--red-600);
+  text-underline-offset: 0.2em;
+}
+
+.rich ul {
+  display: grid;
+  gap: 0.4em;
+  padding-left: 1.2em;
+}
+
+.rich li::marker {
+  color: var(--red-600);
+}
+
+.rich blockquote {
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--red-600);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--white);
+}

@@ -1,0 +1,43 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-transition);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  transform: scaleY(0);
+  will-change: transform;
+}
+
+.red {
+  background: var(--red-600);
+}
+
+.black {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-4);
+  background: var(--black-900);
+}
+
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-inline: var(--gutter);
+}
+
+.label {
+  display: block;
+  font-size: clamp(3rem, 12vw, 11rem);
+  line-height: 0.95;
+  text-align: center;
+}
+
+.meta {
+  color: var(--grey-300);
+}

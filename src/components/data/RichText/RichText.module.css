@@ -1,0 +1,74 @@
+.rich {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 62ch;
+  color: var(--grey-300);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+}
+
+.rich h2,
+.rich h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-display);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-top: var(--space-5);
+}
+
+.rich h2 {
+  font-size: var(--fs-xl);
+}
+
+.rich h3 {
+  font-size: var(--fs-lg);
+}
+
+.rich ul {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+}
+
+.rich li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.rich li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.7em;
+  height: 2px;
+  background: var(--red-600);
+}
+
+.rich blockquote {
+  margin: 0;
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--red-600);
+  font-size: var(--fs-md);
+  color: var(--white);
+}
+
+.rich strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.rich a {
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--red-600);
+  text-underline-offset: 0.2em;
+  transition: color var(--dur-fast) ease;
+}
+
+.rich a:hover {
+  color: var(--red-400);
+}

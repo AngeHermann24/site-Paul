@@ -1,0 +1,12 @@
+.text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 5.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  color: var(--white);
+}
+
+.word {
+  white-space: pre-wrap;
+}

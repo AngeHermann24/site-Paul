@@ -1,0 +1,98 @@
+.hero {
+  position: relative;
+  padding-top: calc(var(--header-h) + clamp(4rem, 10vw, 10rem));
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.withImage {
+  overflow: hidden;
+  isolation: isolate;
+  min-height: clamp(30rem, 78vh, 48rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.media {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: min(62%, 60rem);
+  z-index: -1;
+}
+
+.media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, rgba(8, 8, 8, 0.78) 28%, rgba(8, 8, 8, 0.25) 65%, rgba(8, 8, 8, 0.4) 100%),
+    linear-gradient(0deg, var(--bg) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.7) 0%, transparent 30%);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  filter: grayscale(0.15) contrast(1.05);
+  animation: heroImageIn 1.6s var(--ease-out-expo) both;
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.content {
+  position: relative;
+  width: 100%;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  max-width: 14ch;
+}
+
+/* Un mot long (« COMMENTATEUR ») doit tenir sur une ligne en mobile. */
+.hero .title {
+  font-size: min(var(--fs-3xl), 14vw);
+}
+
+.intro {
+  margin-top: var(--space-6);
+  max-width: 52ch;
+  font-size: var(--fs-md);
+  color: var(--fg-muted);
+}
+
+@media (max-width: 767px) {
+  .withImage {
+    min-height: clamp(28rem, 85vh, 40rem);
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .media::after {
+    background:
+      linear-gradient(0deg, var(--bg) 8%, rgba(8, 8, 8, 0.72) 50%, rgba(8, 8, 8, 0.45) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    animation: none;
+  }
+}

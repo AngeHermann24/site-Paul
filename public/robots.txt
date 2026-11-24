@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# Sitemap généré par `npm run sitemap` (VITE_SITE_URL requis) — voir docs/SETUP.md

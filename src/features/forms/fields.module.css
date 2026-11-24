@@ -1,0 +1,237 @@
+/* Styles partagés des formulaires publics — mêmes tokens que ContactForm. */
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.fieldLabel {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  color: var(--grey-300);
+}
+
+.optional {
+  opacity: 0.6;
+  text-transform: none;
+}
+
+.required {
+  color: var(--red-400);
+}
+
+.input {
+  width: 100%;
+  padding: var(--space-3) 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--white);
+  font: inherit;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.input:focus-visible {
+  outline: none;
+  border-bottom-color: var(--red-600);
+}
+
+.input[aria-invalid='true'] {
+  border-bottom-color: var(--red-400);
+}
+
+.select {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.select option {
+  background: var(--black-800);
+  color: var(--white);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.error {
+  color: var(--red-400);
+  font-size: var(--fs-sm);
+}
+
+/* Chips (radio/checkbox groupées) */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chipLabel {
+  display: inline-block;
+}
+
+.chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  color: var(--grey-300);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-mono);
+  text-transform: uppercase;
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background var(--dur-fast) ease;
+  cursor: pointer;
+}
+
+.chipLabel:hover .chip {
+  color: var(--white);
+  border-color: var(--grey-300);
+}
+
+.chipLabel input:focus-visible + .chip {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.chipActive,
+.chipLabel input:checked + .chip {
+  color: var(--white);
+  border-color: var(--red-600);
+  background: color-mix(in srgb, var(--red-600) 18%, transparent);
+}
+
+/* Honeypot : hors écran, jamais display:none (certains bots le détectent). */
+.honeypot {
+  position: absolute;
+  left: -100vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Consentement */
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.checkbox {
+  appearance: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin: 0.15rem 0 0;
+  flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  position: relative;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.checkbox:checked {
+  border-color: var(--red-600);
+  background: var(--red-600);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  background: var(--white);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.consentText {
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+/* Erreur globale */
+.formError {
+  padding: var(--space-4);
+  border: 1px solid var(--red-600);
+  background: color-mix(in srgb, var(--red-600) 10%, transparent);
+}
+
+.formErrorTitle {
+  color: var(--red-400);
+}
+
+.formErrorBody {
+  margin-top: var(--space-2);
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+/* Confirmation */
+.confirmation {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  padding: var(--space-7);
+  border: 1px solid var(--red-600);
+  background:
+    radial-gradient(140% 100% at 100% 0%, rgba(225, 6, 19, 0.12), transparent 55%),
+    var(--black-800);
+}
+
+.confirmTitle {
+  font-size: var(--fs-xl);
+}
+
+.confirmBody {
+  color: var(--grey-300);
+}
+
+.confirmWarning {
+  color: var(--red-400);
+}
+
+/* Champ fichier */
+.fileInput {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.fileButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--line-strong);
+  color: var(--grey-300);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
+}
+
+.fileButton:hover,
+.fileButton:focus-within {
+  border-color: var(--grey-300);
+  color: var(--white);
+}
+
+.fileButton:focus-within {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.fileName {
+  color: var(--white);
+}
+
+.fileHint {
+  color: var(--grey-300);
+  opacity: 0.7;
+}

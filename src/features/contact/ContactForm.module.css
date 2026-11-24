@@ -1,0 +1,26 @@
+/* Mise en page du formulaire de contact — champs et chips partagés (features/forms/fields.module.css). */
+
+.form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.typeField {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 639px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

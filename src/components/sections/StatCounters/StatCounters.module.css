@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: clamp(9rem, 16vw, 14rem);
+  padding: var(--space-5);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.label {
+  color: var(--grey-300);
+}
+
+.value {
+  font-size: clamp(3.5rem, 2rem + 6vw, 8rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+}
+
+.accent .value {
+  color: var(--red-600);
+}
+
+.accent::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 2rem;
+  height: 2px;
+  background: var(--red-600);
+}
+
+.note {
+  margin-top: var(--space-4);
+  color: var(--grey-300);
+}

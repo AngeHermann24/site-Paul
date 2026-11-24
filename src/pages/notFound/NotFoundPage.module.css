@@ -1,0 +1,35 @@
+.wrap {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: 100svh;
+  padding-top: var(--header-h);
+  padding-bottom: var(--space-8);
+  overflow: hidden;
+}
+
+.code {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: clamp(12rem, 48vw, 52rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(225, 6, 19, 0.45);
+  transform: translate(-50%, -55%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.content {
+  position: relative;
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+
+.body {
+  color: var(--fg-muted);
+  max-width: 46ch;
+}

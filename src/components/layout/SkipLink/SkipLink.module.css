@@ -1,0 +1,16 @@
+.skip {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: calc(var(--z-preloader) + 5);
+  padding: var(--space-3) var(--space-4);
+  background: var(--red-600);
+  color: var(--white);
+  transform: translateY(-200%);
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+
+.skip:focus-visible {
+  transform: translateY(0);
+  outline-color: var(--white);
+}

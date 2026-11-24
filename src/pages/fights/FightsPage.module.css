@@ -1,0 +1,63 @@
+.blockTitle {
+  margin-bottom: var(--space-6);
+}
+
+/* Bilan par catégorie */
+.byCategory {
+  list-style: none;
+  margin-top: var(--space-7);
+  border-top: 1px solid var(--line);
+  max-width: 56rem;
+}
+
+.categoryRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) auto 1fr;
+  align-items: baseline;
+  gap: var(--space-5);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line);
+}
+
+.categoryName {
+  color: var(--grey-300);
+}
+
+.categoryRecord {
+  font-size: var(--fs-xl);
+  color: var(--white);
+}
+
+.categoryLegend {
+  justify-self: end;
+  color: var(--grey-300);
+  opacity: 0.7;
+}
+
+/* À venir */
+.upcoming {
+  list-style: none;
+  display: grid;
+  gap: var(--space-6);
+}
+
+.results {
+  margin-top: var(--space-7);
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: var(--space-6);
+}
+
+@media (max-width: 639px) {
+  .categoryRow {
+    grid-template-columns: 1fr auto;
+  }
+
+  .categoryLegend {
+    display: none;
+  }
+}

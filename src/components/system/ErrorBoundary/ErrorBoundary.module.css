@@ -1,0 +1,31 @@
+.wrap {
+  display: grid;
+  place-content: center;
+  gap: var(--space-5);
+  min-height: 80dvh;
+  padding: calc(var(--header-h) + var(--space-7)) var(--gutter) var(--space-8);
+  text-align: left;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.code {
+  color: var(--red-400);
+}
+
+.title {
+  font-size: var(--fs-2xl);
+}
+
+.body {
+  color: var(--fg-muted);
+  max-width: 50ch;
+}
+
+.reload {
+  justify-self: start;
+  min-height: 3rem;
+  padding-inline: var(--space-5);
+  background: var(--red-600);
+  color: var(--white);
+}

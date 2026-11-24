@@ -1,0 +1,22 @@
+.skeleton {
+  display: block;
+  width: 100%;
+  background: linear-gradient(100deg, var(--black-800) 30%, #1c1c1c 50%, var(--black-800) 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-5);
+}

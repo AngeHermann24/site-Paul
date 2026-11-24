@@ -1,0 +1,325 @@
+.blockTitle {
+  margin-bottom: var(--space-7);
+}
+
+/* Histoire */
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.storyTitle {
+  color: var(--grey-300);
+}
+
+/* Services */
+.services {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-6);
+}
+
+.service {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  transition: border-color var(--dur-base) ease;
+}
+
+.service:hover {
+  border-color: var(--line-strong);
+}
+
+.serviceLevel {
+  color: var(--red-400);
+}
+
+.serviceTitle {
+  font-size: var(--fs-lg);
+}
+
+.serviceDesc {
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+/* Horaires */
+.schedule {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.day {
+  display: grid;
+  grid-template-columns: minmax(6rem, 10rem) 1fr;
+  gap: var(--space-6);
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.dayName {
+  font-size: var(--fs-lg);
+  color: var(--white);
+}
+
+.slots {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.slot {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 1fr auto;
+  align-items: baseline;
+  gap: var(--space-4);
+  color: var(--grey-300);
+}
+
+.slotLabel {
+  color: var(--white);
+}
+
+.slotMeta {
+  color: var(--grey-300);
+  opacity: 0.8;
+}
+
+/* Coachs */
+.coaches {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-6);
+}
+
+.coach {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.coachPhoto {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--black-800);
+}
+
+.coachPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coachPlaceholder {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(120% 80% at 30% 20%, rgba(225, 6, 19, 0.14), transparent 60%),
+    var(--black-800);
+}
+
+.coachBody {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.coachName {
+  font-size: var(--fs-lg);
+}
+
+.coachRole {
+  color: var(--red-400);
+}
+
+.specialties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  color: var(--grey-300);
+}
+
+.specialties li + li::before {
+  content: '· ';
+}
+
+.coachBio {
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+.coachInsta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--grey-300);
+  margin-top: var(--space-2);
+}
+
+.coachInsta:hover {
+  color: var(--white);
+}
+
+/* Formules */
+.memberships {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: var(--space-6);
+}
+
+.membership {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+}
+
+.membership.featured {
+  border-color: var(--red-600);
+}
+
+.featuredTag {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  color: var(--red-400);
+}
+
+.membershipName {
+  font-size: var(--fs-xl);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.priceValue {
+  font-size: var(--fs-2xl);
+}
+
+.priceOnRequest {
+  font-size: var(--fs-lg);
+  color: var(--grey-300);
+}
+
+.pricePeriod {
+  color: var(--grey-300);
+}
+
+.membershipDesc {
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+.features {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+.features li {
+  position: relative;
+  padding-left: 1.25em;
+}
+
+.features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.6em;
+  height: 2px;
+  background: var(--red-600);
+}
+
+/* Localisation + inscription */
+.location {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.locationText {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+
+.locationTitle {
+  margin-bottom: var(--space-2);
+}
+
+.address {
+  display: grid;
+  gap: var(--space-1);
+  font-style: normal;
+  color: var(--grey-300);
+}
+
+.address strong {
+  color: var(--white);
+  font-size: var(--fs-md);
+}
+
+.hours {
+  display: grid;
+  gap: var(--space-1);
+  color: var(--grey-300);
+}
+
+.hoursLabel {
+  color: var(--red-400);
+}
+
+.noLocation {
+  color: var(--grey-300);
+}
+
+.join {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+  padding: var(--space-7);
+  border: 1px solid var(--red-600);
+  background:
+    radial-gradient(140% 100% at 100% 0%, rgba(225, 6, 19, 0.12), transparent 55%),
+    var(--black-800);
+}
+
+.joinBody {
+  color: var(--grey-300);
+  max-width: 42ch;
+}
+
+@media (max-width: 899px) {
+  .story,
+  .location {
+    grid-template-columns: 1fr;
+  }
+
+  .day {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .slot {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}

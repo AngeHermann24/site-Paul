@@ -1,0 +1,56 @@
+.switcher {
+  color: var(--fg-muted);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.sep {
+  opacity: 0.35;
+  padding-inline: 0.35em;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  transition: color var(--dur-fast) ease;
+}
+
+.sm .link {
+  min-width: 2rem;
+}
+
+.lg {
+  font-size: var(--fs-sm);
+}
+
+a.link:hover,
+a.link:focus-visible {
+  color: var(--white);
+}
+
+.active {
+  color: var(--white);
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0.55rem;
+  width: 4px;
+  height: 4px;
+  background: var(--red-600);
+  transform: translateX(-50%);
+}

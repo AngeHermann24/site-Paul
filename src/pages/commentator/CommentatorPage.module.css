@@ -1,0 +1,210 @@
+.blockTitle {
+  margin-bottom: var(--space-7);
+}
+
+/* 01 — Présentation */
+.presentation {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 4fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 7rem);
+}
+
+.presentationText {
+  display: grid;
+  gap: var(--space-6);
+  justify-items: start;
+}
+
+.portrait {
+  max-width: 480px;
+  justify-self: end;
+}
+
+.lead {
+  color: var(--grey-300);
+  font-size: var(--fs-md);
+  max-width: 52ch;
+}
+
+/* 02 — Événements */
+.events {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.event {
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--line);
+}
+
+.eventHead {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 1fr auto;
+  align-items: baseline;
+  gap: var(--space-5);
+}
+
+.eventDate {
+  color: var(--grey-300);
+}
+
+.eventName {
+  font-size: var(--fs-xl);
+}
+
+.eventMeta {
+  color: var(--grey-300);
+  margin-top: var(--space-1);
+}
+
+.eventRole {
+  color: var(--red-400);
+  justify-self: end;
+}
+
+.eventDesc {
+  margin-top: var(--space-3);
+  margin-left: calc(9rem + var(--space-5));
+  color: var(--grey-300);
+  max-width: 62ch;
+}
+
+/* 03 — Disciplines */
+.disciplines {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5) var(--space-7);
+}
+
+.discipline {
+  font-size: var(--fs-xl);
+  color: var(--grey-300);
+  transition: color var(--dur-base) ease;
+}
+
+.discipline:hover {
+  color: var(--red-400);
+}
+
+/* 04 — Extraits */
+.extracts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+  gap: var(--space-6);
+}
+
+.extract {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.extractCaption {
+  color: var(--grey-300);
+}
+
+.audioLabel {
+  color: var(--red-400);
+}
+
+.audio {
+  width: 100%;
+}
+
+/* 05 — Prestations */
+.services {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: var(--space-6);
+}
+
+.service {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--red-600);
+}
+
+.serviceIndex {
+  color: var(--red-400);
+}
+
+.serviceTitle {
+  font-size: var(--fs-lg);
+}
+
+.serviceDesc {
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+.deliverables {
+  list-style: none;
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  color: var(--grey-300);
+  font-size: var(--fs-sm);
+}
+
+.deliverables li {
+  position: relative;
+  padding-left: 1.25em;
+}
+
+.deliverables li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.6em;
+  height: 2px;
+  background: var(--red-600);
+}
+
+/* 06 — Booking */
+.booking {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: start;
+  gap: var(--space-7);
+}
+
+.bookingBody {
+  margin-top: var(--space-4);
+  color: var(--grey-300);
+  max-width: 46ch;
+}
+
+.bookingMail {
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 899px) {
+  .presentation,
+  .booking {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .eventHead {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .eventRole {
+    justify-self: start;
+  }
+
+  .eventDesc {
+    margin-left: 0;
+  }
+}

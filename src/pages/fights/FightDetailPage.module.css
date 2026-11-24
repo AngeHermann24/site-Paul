@@ -1,0 +1,89 @@
+.hero {
+  padding-top: calc(var(--header-h) + var(--space-8));
+  padding-bottom: var(--space-7);
+}
+
+.title {
+  font-size: var(--fs-3xl);
+  margin-top: var(--space-4);
+}
+
+.vs {
+  color: var(--red-600);
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.meta {
+  color: var(--grey-300);
+}
+
+.titleFight {
+  color: var(--red-400);
+  border: 1px solid var(--red-600);
+  padding: var(--space-1) var(--space-3);
+}
+
+.outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.outcomeShort {
+  font-size: var(--fs-2xl);
+  line-height: 1;
+}
+
+.win .outcomeShort {
+  color: var(--red-600);
+}
+
+.loss .outcomeShort {
+  color: var(--grey-300);
+}
+
+.outcomeLong {
+  font-size: var(--fs-base);
+  letter-spacing: 0.06em;
+  color: var(--grey-300);
+}
+
+.pending .outcomeShort {
+  color: var(--white);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.detail {
+  padding: var(--space-5) var(--space-4) var(--space-5) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.detailLabel {
+  color: var(--grey-300);
+  margin-bottom: var(--space-2);
+}
+
+.detailValue {
+  font-size: var(--fs-lg);
+}
+
+.sectionTitle {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-6);
+}

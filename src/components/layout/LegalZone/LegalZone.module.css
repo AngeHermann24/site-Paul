@@ -1,0 +1,33 @@
+.zone {
+  position: relative;
+  border-top: 1px solid var(--line);
+  background: var(--black-900);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-6);
+  padding-block: var(--space-5);
+  color: var(--fg-muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  transition: color var(--dur-fast) ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--white);
+}

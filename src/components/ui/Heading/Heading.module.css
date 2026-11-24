@@ -1,0 +1,60 @@
+.heading {
+  color: var(--fg);
+}
+
+.line {
+  display: block;
+}
+
+.sizeMega {
+  font-size: var(--fs-mega);
+  line-height: 0.8;
+}
+
+.sizeXxxl {
+  font-size: var(--fs-3xl);
+}
+
+.sizeXxl {
+  font-size: var(--fs-2xl);
+  line-height: 0.9;
+}
+
+.sizeXl {
+  font-size: var(--fs-xl);
+  line-height: 0.95;
+}
+
+.sizeLg {
+  font-size: var(--fs-lg);
+  line-height: 1;
+}
+
+.solid {
+  color: var(--fg);
+}
+
+.accent {
+  color: var(--red-600);
+}
+
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.55);
+}
+
+@supports not (-webkit-text-stroke: 1px white) {
+  .outline {
+    color: var(--grey-800);
+  }
+}
+
+.bleed {
+  white-space: nowrap;
+  margin-inline: -0.04em;
+}
+
+.heading em {
+  font-style: normal;
+  color: var(--red-600);
+}

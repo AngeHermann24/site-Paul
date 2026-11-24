@@ -1,0 +1,33 @@
+.empty {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(255, 255, 255, 0.018) 14px 15px),
+    var(--black-800);
+}
+
+.corner {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-top: 2px solid var(--red-600);
+  border-left: 2px solid var(--red-600);
+}
+
+.title {
+  color: var(--white);
+}
+
+.body {
+  max-width: 56ch;
+  color: var(--fg-muted);
+}
+
+.action {
+  margin-top: var(--space-4);
+}

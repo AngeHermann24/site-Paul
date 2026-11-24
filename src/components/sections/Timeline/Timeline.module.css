@@ -1,0 +1,117 @@
+.timeline {
+  position: relative;
+  overflow: hidden;
+  background: var(--black-800);
+  border-block: 1px solid var(--line);
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-6) var(--gutter) 0;
+}
+
+.label {
+  color: var(--red-400);
+}
+
+.hint {
+  color: var(--grey-300);
+}
+
+.track {
+  list-style: none;
+}
+
+.horizontal .track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  padding: var(--space-8) var(--gutter);
+  will-change: transform;
+}
+
+.vertical .track {
+  display: grid;
+  padding: var(--space-6) var(--gutter) var(--space-8);
+}
+
+.item {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.horizontal .item {
+  width: clamp(18rem, 32vw, 30rem);
+  padding-right: var(--space-7);
+  margin-right: var(--space-7);
+  border-right: 1px solid var(--line);
+}
+
+.vertical .item {
+  padding: var(--space-6) 0 var(--space-6) var(--space-6);
+  border-left: 1px solid var(--line-strong);
+}
+
+.vertical .item::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--space-6) + 0.6em);
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  background: var(--red-600);
+}
+
+.year {
+  font-size: clamp(4rem, 2rem + 6vw, 9rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
+.item:first-child .year,
+.item:last-child .year {
+  color: var(--red-600);
+  -webkit-text-stroke: 0;
+}
+
+.index {
+  color: var(--grey-300);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  line-height: 0.95;
+}
+
+.description {
+  max-width: 40ch;
+  color: var(--grey-300);
+}
+
+.progress {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--space-6);
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.progressBar {
+  display: block;
+  height: 100%;
+  background: var(--red-600);
+  transform-origin: left;
+  transform: scaleX(0);
+}

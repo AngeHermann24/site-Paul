@@ -1,0 +1,9 @@
+.results {
+  margin-top: var(--space-7);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}

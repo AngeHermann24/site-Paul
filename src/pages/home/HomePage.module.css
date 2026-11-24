@@ -1,0 +1,224 @@
+.blockTitle {
+  margin-bottom: var(--space-7);
+}
+
+/* 01 — Présentation */
+.presentation {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 7rem);
+}
+
+.presentationText {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-6);
+}
+
+.scrub {
+  max-width: 20ch;
+}
+
+.portrait {
+  max-width: 520px;
+  justify-self: end;
+}
+
+.tag {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  background: var(--red-600);
+  color: var(--white);
+}
+
+/* 03 — Activités */
+.activities {
+  border-top: 1px solid var(--line);
+}
+
+.activity {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: clamp(1.25rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.activityIndex {
+  color: var(--red-400);
+}
+
+.activityTitle {
+  font-size: var(--fs-2xl);
+  line-height: 0.9;
+  transition:
+    transform var(--dur-slow) var(--ease-out-expo),
+    color var(--dur-base) ease;
+}
+
+.activityArrow {
+  color: var(--grey-300);
+  transition:
+    transform var(--dur-slow) var(--ease-out-expo),
+    color var(--dur-base) ease;
+}
+
+.activity:hover .activityTitle,
+.activity:focus-visible .activityTitle {
+  transform: translateX(0.25em);
+  color: var(--red-600);
+}
+
+.activity:hover .activityArrow,
+.activity:focus-visible .activityArrow {
+  transform: rotate(45deg);
+  color: var(--white);
+}
+
+/* 04 — Combats */
+.fights {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-7);
+}
+
+.fightBlock {
+  display: grid;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.fightLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--grey-300);
+}
+
+.live {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red-600);
+  animation: pulse 1.2s steps(2, start) infinite;
+}
+
+@keyframes pulse {
+  to {
+    visibility: hidden;
+  }
+}
+
+.more {
+  margin-top: var(--space-6);
+}
+
+/* 06 / 07 — split */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.splitText {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+
+.lead {
+  max-width: 46ch;
+  font-size: var(--fs-md);
+  color: var(--grey-300);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.events {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.eventRow {
+  display: grid;
+  grid-template-columns: 7rem 1fr auto;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-bottom: 1px solid var(--line);
+  color: var(--grey-300);
+}
+
+.eventName {
+  font-size: var(--fs-lg);
+  color: var(--white);
+}
+
+.eventRole {
+  color: var(--red-400);
+}
+
+/* 09 — Actualités */
+.newsHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.newsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-6);
+}
+
+/* 10 — Sponsoring */
+.sponsor {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  align-items: end;
+  gap: var(--space-7);
+}
+
+.sponsorSide {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (max-width: 899px) {
+  .presentation,
+  .split,
+  .sponsor {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .eventRow {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+@media (max-width: 639px) {
+  .activity {
+    grid-template-columns: 2.25rem 1fr auto;
+  }
+
+  .activityArrow {
+    width: 28px;
+    height: 28px;
+  }
+}

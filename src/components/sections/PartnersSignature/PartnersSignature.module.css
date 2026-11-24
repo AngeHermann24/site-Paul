@@ -1,0 +1,165 @@
+.signature {
+  position: relative;
+  z-index: var(--z-base);
+  padding-block: clamp(4rem, 8vw, 7rem) clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+  background: var(--black-900);
+  overflow: hidden;
+}
+
+.head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-7);
+}
+
+.label {
+  color: var(--red-400);
+}
+
+.title {
+  font-size: var(--fs-3xl);
+  line-height: 0.85;
+}
+
+.loading {
+  height: 6rem;
+}
+
+/* ---------- Marquee CSS infini : deux groupes identiques, translateX(-50%) ---------- */
+.marquee {
+  --gap: clamp(3rem, 6vw, 6rem);
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  border-block: 1px solid var(--line);
+}
+
+.rail {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .rail,
+.marquee:focus-within .rail {
+  animation-play-state: paused;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding-inline: calc(var(--gap) / 2);
+  list-style: none;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  min-height: 7rem;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.75rem;
+  height: 2px;
+  background: var(--red-600);
+  transform: scaleX(0);
+  transition: transform var(--dur-base) var(--ease-out-expo);
+}
+
+.link:hover::after,
+.link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Cadre identique pour tous les logos : un logo haut remplit la hauteur, un logo large la largeur. */
+.logo {
+  height: clamp(3rem, 5vw, 4.5rem);
+  width: clamp(8rem, 13vw, 12rem);
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.4);
+  opacity: 0.65;
+  transition:
+    filter var(--dur-base) ease,
+    opacity var(--dur-base) ease;
+}
+
+.featured .logo {
+  height: clamp(3.5rem, 6vw, 5.5rem);
+  opacity: 0.85;
+}
+
+.link:hover .logo,
+.link:focus-visible .logo {
+  filter: grayscale(0) drop-shadow(0 0 18px rgba(225, 6, 19, 0.35));
+  opacity: 1;
+}
+
+.name {
+  font-size: var(--fs-xl);
+  color: var(--grey-300);
+  white-space: nowrap;
+  transition: color var(--dur-base) ease;
+}
+
+.link:hover .name,
+.link:focus-visible .name {
+  color: var(--red-400);
+}
+
+/* ---------- Invitation (aucun sponsor) ---------- */
+.empty {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+}
+
+.emptyTitle {
+  font-size: var(--fs-xl);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+}
+
+.emptyBody {
+  max-width: 52ch;
+  color: var(--grey-300);
+}
+
+/* Reduced motion : liste statique */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    mask-image: none;
+  }
+
+  .rail {
+    width: auto;
+    animation: none;
+  }
+
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline: var(--gutter);
+  }
+
+  .group[aria-hidden='true'] {
+    display: none;
+  }
+}

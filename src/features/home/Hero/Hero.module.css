@@ -1,0 +1,279 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100svh;
+  padding-top: calc(var(--header-h) + var(--space-5));
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--black-900);
+}
+
+/* ---------- Médias ---------- */
+.mediaWrap,
+.mediaDepth,
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.mediaWrap {
+  z-index: -3;
+}
+
+.mediaDepth {
+  inset: -3%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+/* Placeholder cinématique en attendant la vidéo officielle */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(45% 60% at 72% 42%, rgba(255, 255, 255, 0.06), transparent 70%),
+    radial-gradient(70% 50% at 70% 110%, rgba(225, 6, 19, 0.22), transparent 70%),
+    repeating-linear-gradient(100deg, transparent 0 46px, rgba(255, 255, 255, 0.018) 46px 47px),
+    linear-gradient(180deg, #151515 0%, var(--black-900) 80%);
+}
+
+/* Lumière rouge qui suit doucement la souris (transform uniquement) */
+.light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 70vmax;
+  height: 70vmax;
+  margin: -35vmax 0 0 -35vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(225, 6, 19, 0.34) 0%, rgba(225, 6, 19, 0.12) 35%, transparent 65%);
+  pointer-events: none;
+  transform: translate(68vw, 38vh);
+  will-change: transform;
+}
+
+/* Overlay noir progressif + vignettage */
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(8, 8, 8, 0.55) 0%, rgba(8, 8, 8, 0.1) 30%, rgba(8, 8, 8, 0.35) 60%, var(--black-900) 100%),
+    radial-gradient(120% 90% at 50% 40%, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.shadeScroll {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--black-900);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- HUD ---------- */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.hudLeft {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  color: var(--grey-300);
+}
+
+.liveDot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-600);
+  box-shadow: 0 0 0 4px rgba(225, 6, 19, 0.18);
+}
+
+.hudRight {
+  color: var(--grey-300);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Titre ---------- */
+.bottom {
+  padding-bottom: var(--space-5);
+}
+
+.roles {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) 0;
+  margin-bottom: var(--space-3);
+  color: var(--white);
+}
+
+.roleMask {
+  overflow: hidden;
+}
+
+.role {
+  display: inline-block;
+}
+
+.roleSep {
+  padding-inline: var(--space-4);
+  color: var(--red-600);
+}
+
+.titleDepth {
+  will-change: transform;
+}
+
+.title {
+  margin-left: -0.035em;
+  font-size: clamp(5.5rem, min(24vw, 40svh), 24rem);
+  line-height: 0.78;
+  letter-spacing: -0.02em;
+}
+
+.letters {
+  display: flex;
+}
+
+.charMask {
+  display: block;
+  overflow: hidden;
+  padding-top: 0.03em;
+}
+
+.char {
+  display: block;
+}
+
+/* ---------- Pied ---------- */
+.foot {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: end;
+  gap: var(--space-5) var(--space-6);
+  margin-top: var(--space-5);
+}
+
+.tagline {
+  max-width: 32ch;
+  font-size: var(--fs-md);
+  color: var(--grey-300);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.scrollCue {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 2.75rem;
+  color: var(--grey-300);
+  writing-mode: horizontal-tb;
+}
+
+.scrollLine {
+  position: relative;
+  width: 1px;
+  height: 3.5rem;
+  overflow: hidden;
+  background: var(--line-strong);
+}
+
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--red-600);
+  transform: translateY(-100%);
+  animation: cue 1.8s var(--ease-in-out-quart) infinite;
+}
+
+@keyframes cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scrollCue:hover,
+.scrollCue:focus-visible {
+  color: var(--white);
+}
+
+/* ---------- État initial (avant la timeline GSAP) ---------- */
+.hero[data-phase='pending'] [data-hero-char] {
+  transform: translateY(105%);
+}
+
+.hero[data-phase='pending'] [data-hero-role] {
+  transform: translateY(110%);
+}
+
+.hero[data-phase='pending'] :is([data-hero-fade], [data-hero-hud], [data-hero-media]) {
+  opacity: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1023px) {
+  .foot {
+    grid-template-columns: 1fr auto;
+  }
+
+  .tagline {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 639px) {
+  .roleSep {
+    padding-inline: var(--space-2);
+  }
+
+  .roles {
+    font-size: 0.625rem;
+  }
+
+  /* Titre affiché en entier, sans débordement */
+  .title {
+    font-size: 36vw;
+  }
+
+  .foot {
+    grid-template-columns: 1fr;
+  }
+
+  .scrollCue {
+    display: none;
+  }
+
+  .ctas > * {
+    flex: 1 1 100%;
+  }
+}
